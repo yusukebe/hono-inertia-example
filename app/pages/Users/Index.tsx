@@ -1,8 +1,7 @@
-import { Head, Link } from '@inertiajs/react'
-import type { PageProps } from '../../pages.gen'
+import { Head, Link, type PageComponent } from '@ts-76/inertia-hono-jsx'
 import Layout from '../Layout'
 
-export default function UsersIndex({ users }: PageProps<'Users/Index'>) {
+const UsersIndex: PageComponent<'Users/Index'> = ({ users }) => {
   return (
     <Layout>
       <Head title="Users" />
@@ -20,3 +19,5 @@ export default function UsersIndex({ users }: PageProps<'Users/Index'>) {
     </Layout>
   )
 }
+
+export default UsersIndex

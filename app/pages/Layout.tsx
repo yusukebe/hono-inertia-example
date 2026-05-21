@@ -1,9 +1,9 @@
-import { Link } from '@inertiajs/react'
-import type { PropsWithChildren } from 'react'
+import { Link } from '@ts-76/inertia-hono-jsx'
+import type { Child } from 'hono/jsx'
 
-export default function Layout({ children }: PropsWithChildren) {
+export default function Layout({ children }: { children?: Child }) {
   return (
-    <div className="app">
+    <div class="app">
       <header>
         <nav>
           <Link href="/">Home</Link>

@@ -1,8 +1,7 @@
-import { Head, Link } from '@inertiajs/react'
-import type { PageProps } from '../../pages.gen'
+import { Head, Link, type PageComponent } from '@ts-76/inertia-hono-jsx'
 import Layout from '../Layout'
 
-export default function UsersShow({ user }: PageProps<'Users/Show'>) {
+const UsersShow: PageComponent<'Users/Show'> = ({ user }) => {
   return (
     <Layout>
       <Head title={user.name} />
@@ -19,3 +18,5 @@ export default function UsersShow({ user }: PageProps<'Users/Show'>) {
     </Layout>
   )
 }
+
+export default UsersShow

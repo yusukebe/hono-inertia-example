@@ -1,9 +1,8 @@
-import { Head, Link, useForm } from '@inertiajs/react'
-import type { PageProps } from '../../pages.gen'
+import { Head, Link, useForm, type PageComponent } from '@ts-76/inertia-hono-jsx'
 import Layout from '../Layout'
 
-export default function UsersNew({ values, errors }: PageProps<'Users/New'>) {
-  const form = useForm({
+const UsersNew: PageComponent<'Users/New'> = ({ values, errors }) => {
+  const form = useForm('post', '/users', {
     name: values?.name ?? '',
     email: values?.email ?? '',
     bio: values?.bio ?? ''
@@ -21,28 +20,37 @@ export default function UsersNew({ values, errors }: PageProps<'Users/New'>) {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          form.post('/users')
+          form.submit()
         }}
       >
         <div>
-          <label htmlFor="name">Name</label>
-          <input id="name" type="text" value={form.data.name} onChange={(e) => form.setData('name', e.target.value)} />
-          {fieldErrors.name && <p className="error">{fieldErrors.name}</p>}
+          <label for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            value={form.data.name}
+            onInput={(e) => form.setData('name', (e.target as HTMLInputElement).value)}
+          />
+          {fieldErrors.name && <p class="error">{fieldErrors.name}</p>}
         </div>
         <div>
-          <label htmlFor="email">Email</label>
+          <label for="email">Email</label>
           <input
             id="email"
             type="email"
             value={form.data.email}
-            onChange={(e) => form.setData('email', e.target.value)}
+            onInput={(e) => form.setData('email', (e.target as HTMLInputElement).value)}
           />
-          {fieldErrors.email && <p className="error">{fieldErrors.email}</p>}
+          {fieldErrors.email && <p class="error">{fieldErrors.email}</p>}
         </div>
         <div>
-          <label htmlFor="bio">Bio</label>
-          <textarea id="bio" value={form.data.bio} onChange={(e) => form.setData('bio', e.target.value)} />
-          {fieldErrors.bio && <p className="error">{fieldErrors.bio}</p>}
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            value={form.data.bio}
+            onInput={(e) => form.setData('bio', (e.target as HTMLTextAreaElement).value)}
+          />
+          {fieldErrors.bio && <p class="error">{fieldErrors.bio}</p>}
         </div>
         <button type="submit" disabled={form.processing}>
           Create
@@ -51,3 +59,5 @@ export default function UsersNew({ values, errors }: PageProps<'Users/New'>) {
     </Layout>
   )
 }
+
+export default UsersNew

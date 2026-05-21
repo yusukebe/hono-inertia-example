@@ -10,19 +10,15 @@
   },
   "dependencies": {
     "@hono/inertia": "^0.2.0",
-    "@hono/react-renderer": "^1.0.1",
     "@hono/zod-validator": "^0.7.6",
-    "@inertiajs/react": "^3.0.3",
-    "hono": "^4.12.14",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "@inertiajs/core": "^3.0.3",
+    "@ts-76/inertia-hono-jsx": "^0.2.3",
+    "hono": "^4.12.21",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.2.3",
     "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "vite": "^8.0.10",
     "vite-ssr-components": "^0.6.1",
     "wrangler": "^4.17.0"

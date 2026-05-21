@@ -5,7 +5,7 @@ export type PageName = 'Home' | 'Users/Index' | 'Users/New' | 'Users/Show'
 
 declare module '@hono/inertia' {
   interface InertiaPages {
-    'Home': unknown
+    Home: unknown
     'Users/Index': unknown
     'Users/New': unknown
     'Users/Show': unknown

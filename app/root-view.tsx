@@ -1,5 +1,5 @@
-import { renderToString } from 'react-dom/server'
-import { Link, Script, ViteClient } from 'vite-ssr-components/react'
+import { renderToString } from 'hono/jsx/dom/server'
+import { Link, Script, ViteClient } from 'vite-ssr-components/hono'
 import type { RootView } from '@hono/inertia'
 import { renderPage } from './ssr'
 

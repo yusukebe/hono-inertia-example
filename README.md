@@ -1,6 +1,6 @@
 # hono-inertia-example
 
-[Hono](https://hono.dev) + [Inertia.js](https://inertiajs.com) (React) on Cloudflare Workers.
+[Hono](https://hono.dev) + [Inertia.js](https://inertiajs.com) (`hono/jsx` via [`@ts-76/inertia-hono-jsx`](https://github.com/ts-76/inertia-hono-jsx)) on Cloudflare Workers.
 
 ## Pages
 

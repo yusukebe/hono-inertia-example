@@ -1,8 +1,7 @@
-import { Head } from '@inertiajs/react'
-import type { PageProps } from '../pages.gen'
+import { Head, type PageComponent } from '@ts-76/inertia-hono-jsx'
 import Layout from './Layout'
 
-export default function Home({ message }: PageProps<'Home'>) {
+const Home: PageComponent<'Home'> = ({ message }) => {
   return (
     <Layout>
       <Head title="Home" />
@@ -10,3 +9,5 @@ export default function Home({ message }: PageProps<'Home'>) {
     </Layout>
   )
 }
+
+export default Home
