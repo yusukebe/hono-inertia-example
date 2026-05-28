@@ -32,7 +32,7 @@ const routes = app
   })
   .post(
     '/users',
-    zValidator('form', userInput, (result, c) => {
+    zValidator('json', userInput, (result, c) => {
       if (!result.success) {
         const fieldErrors = z.flattenError(result.error).fieldErrors
         const errors: Record<string, string> = {}
@@ -51,7 +51,7 @@ const routes = app
       }
     }),
     (c) => {
-      const input = c.req.valid('form')
+      const input = c.req.valid('json')
       const user = createUser(input)
       return c.redirect(`/users/${user.id}`, 303)
     }
